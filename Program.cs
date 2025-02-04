@@ -6,25 +6,68 @@ namespace L20250204
     {
         static void Main(string[] args)
         {
-            int[] arr = new int[52];  // 1~52 저장
-            for (int i = 0; i < 52; i++)
+            int[] deck = new int[52];
+
+            for (int i = 0; i < deck.Length; i++)
             {
-                arr[i] = i + 1;
+                deck[i] = i + 1;
             }
 
-            Random randomObj = new Random();
-
-            // Fisher-Yates Shuffle
-            for (int i = 51; i > 0; i--)
+            Random random = new Random();
+            random.Next(0, 1000);
+            for (int i = 0; i < 10; i++)
             {
-                int j = randomObj.Next(0, i + 1);
-                (arr[i], arr[j]) = (arr[j], arr[i]);  // Swap
+                int firstCardIndex = random.Next(0, deck.Length);
+                int secondCardIndex = random.Next(0, deck.Length);
+                (deck[firstCardIndex], deck[secondCardIndex]) = (deck[secondCardIndex], deck[firstCardIndex]);
             }
 
-            // 앞에서 8개 출력
             for (int i = 0; i < 8; i++)
             {
-                Console.WriteLine(arr[i]);
+                int deckNum = deck[i];
+                //Console.WriteLine( deckNum);
+                switch ((deckNum-1)/13)
+                {
+                    case 0:
+                        Console.Write("Heart ");
+                        break;
+                    case 1:
+                        Console.Write("Diamond ");
+                        break;
+                    case 2:
+                        Console.Write("Clover ");
+                        break;
+                    case 3:
+                        Console.Write("Spade ");
+                        break;
+                }
+
+                int num = deckNum % 13;
+                if(num == 1)
+                {
+                    Console.Write("A");
+                    Console.WriteLine();
+                }
+                else if (num == 11)
+                {
+                    Console.Write("J");
+                    Console.WriteLine();
+                }
+                else if(num == 12)
+                {
+                    Console.Write("Q");
+                    Console.WriteLine();
+                }
+                else if(num == 13)
+                {
+                    Console.Write("K");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.Write(num);
+                    Console.WriteLine();
+                }
             }
         }
     }
