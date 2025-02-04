@@ -168,28 +168,13 @@ namespace L20250204
         static int  CheckScore(int cardNumber)
         {
             int cardValue = ((cardNumber - 1) % 13) + 1;
-            int score;
-            string cardName = string.Empty;
-            switch (cardValue)
-            {
-                case 1:
-                    score = 1;
-                    break;
-                case 11:
-                case 12:
-                case 13:
-                    score = 10;
-                    break;
-                default:
-                    score = cardValue;
-                    break;
-            }
-            return score;
+            return (((cardNumber - 1) % 13) + 1) > 10 ? 11 : 1;
+            
         }
 
         static void Winner(int _computerScore, int _playerScore)
         {
-            string winner = "";
+            /*string winner = "";
             if (_computerScore == 21 || _playerScore == 21)
             {
                 Console.WriteLine("블랙잭");
@@ -207,9 +192,32 @@ namespace L20250204
             {
                 winner = _computerScore > _playerScore ? "Computer" : "Player";
             }
-            Console.WriteLine(winner + " Win");
-        }
+            Console.WriteLine(winner + " Win");*/
+            if (_playerScore >= 21 && _computerScore < 21)
+            {
+                Console.WriteLine("Computer Win");
+            }
+            else if (_playerScore < 21 && _computerScore >= 21)
+            {
+                Console.WriteLine("Player Win");
+            }
+            else if (_playerScore >= 21 && _computerScore >= 21)
+            {
+                //Player Win
+                Console.WriteLine("Player Win");
+            }
+            else if (_computerScore <= _playerScore)
+            {
+                //Player Win
+                Console.WriteLine("Player Win");
+            }
+            else // (_computerScore > _playerScore)
+            {
+                //Computer Win
+                Console.WriteLine("Computer Win");
+            }
 
+        }
         static void Main(string[] args)
         {
             int[] deck = new int[52];
@@ -231,10 +239,11 @@ namespace L20250204
             {
                 computerScore += CheckScore(deck[i]);
             }
-            for (int i = 1; i < 6; i++)
+            for (int i = 3; i < 6; i++)
             {
                 playerScore += CheckScore(deck[i]);
             }
+            Console.WriteLine($"Computer score : {computerScore}, Player Score : {playerScore}");
             Winner(computerScore, playerScore);
         }
     }
