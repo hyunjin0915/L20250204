@@ -12,3 +12,4 @@ C:\hj\work\L20250204\obj\Debug\net8.0\refint\L20250204.dll
 C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.pdb
 C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.genruntimeconfig.cache
 C:\hj\work\L20250204\obj\Debug\net8.0\ref\L20250204.dll
+C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.sourcelink.json

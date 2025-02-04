@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using System;
 
 namespace L20250204
 {
@@ -6,31 +6,25 @@ namespace L20250204
     {
         static void Main(string[] args)
         {
-            int[] arr = new int[53];
-            bool[] isSelected = new bool[53];
+            int[] arr = new int[52];  // 1~52 저장
+            for (int i = 0; i < 52; i++)
+            {
+                arr[i] = i + 1;
+            }
+
             Random randomObj = new Random();
-            int cnt = 0;
-            for (int i = 1; i <= 52; i++)
+
+            // Fisher-Yates Shuffle
+            for (int i = 51; i > 0; i--)
             {
-                arr[i] = i;
+                int j = randomObj.Next(0, i + 1);
+                (arr[i], arr[j]) = (arr[j], arr[i]);  // Swap
             }
-            while (cnt<8)
+
+            // 앞에서 8개 출력
+            for (int i = 0; i < 8; i++)
             {
-                
-                int randomNum = randomObj.Next(1, 52);
-                if (isSelected[randomNum])
-                {
-                    continue;
-                }
-                isSelected[randomNum] = true;
-                cnt++;
-            }
-            for (int i = 1; i <= 52; i++)
-            {
-                if (isSelected[i])
-                {
-                    Console.WriteLine(arr[i]);
-                }
+                Console.WriteLine(arr[i]);
             }
         }
     }
