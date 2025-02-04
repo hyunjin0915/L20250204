@@ -1,0 +1,14 @@
+C:\hj\work\L20250204\bin\Debug\net8.0\L20250204.exe
+C:\hj\work\L20250204\bin\Debug\net8.0\L20250204.deps.json
+C:\hj\work\L20250204\bin\Debug\net8.0\L20250204.runtimeconfig.json
+C:\hj\work\L20250204\bin\Debug\net8.0\L20250204.dll
+C:\hj\work\L20250204\bin\Debug\net8.0\L20250204.pdb
+C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.GeneratedMSBuildEditorConfig.editorconfig
+C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.AssemblyInfoInputs.cache
+C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.AssemblyInfo.cs
+C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.csproj.CoreCompileInputs.cache
+C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.dll
+C:\hj\work\L20250204\obj\Debug\net8.0\refint\L20250204.dll
+C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.pdb
+C:\hj\work\L20250204\obj\Debug\net8.0\L20250204.genruntimeconfig.cache
+C:\hj\work\L20250204\obj\Debug\net8.0\ref\L20250204.dll
