@@ -8,6 +8,7 @@ namespace L20250204
         {
             int[] arr = new int[53];
             bool[] isSelected = new bool[53];
+            Random randomObj = new Random();
             int cnt = 0;
             for (int i = 1; i <= 52; i++)
             {
@@ -15,7 +16,7 @@ namespace L20250204
             }
             while (cnt<8)
             {
-                Random randomObj = new Random();
+                
                 int randomNum = randomObj.Next(1, 52);
                 if (isSelected[randomNum])
                 {
@@ -24,7 +25,7 @@ namespace L20250204
                 isSelected[randomNum] = true;
                 cnt++;
             }
-            for (int i = 0; i < 52; i++)
+            for (int i = 1; i <= 52; i++)
             {
                 if (isSelected[i])
                 {
